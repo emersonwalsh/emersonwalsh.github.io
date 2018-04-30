@@ -11,7 +11,7 @@ function createViz() {
     var option = {
         baseOption: {
             title : {
-                text: 'Professional Interests',
+                text: 'Professional Interests Over Time',
                 left: 'center'
             },
             tooltip: {
@@ -23,7 +23,7 @@ function createViz() {
                 axisType: 'category',
                 autoPlay: true,
                 loop: true,
-                playInterval: 2000,
+                playInterval: 2250,
                 controlPosition: 'left',
                 data: ['2013', '2014', '2015', '2016', '2017', '2018']
             },
@@ -46,12 +46,12 @@ function createViz() {
                     {
                         data: [
                             {
-                                name: 'Mechanical Design',
-                                value: 30
-                            },
-                            {
                                 name: 'R&D',
                                 value: 40
+                            },
+                            {
+                                name: 'Mechanical Design',
+                                value: 30
                             },
                             {
                                 name: 'Data Analytics',
@@ -79,7 +79,7 @@ function createViz() {
                             },
                             {
                                 name: 'Computer Aided Design',
-                                value: 10
+                                value: 20
                             }
 
                         ]
@@ -91,12 +91,16 @@ function createViz() {
                     {
                         data: [
                             {
-                                name: 'Mechanical Design',
+                                name: 'R&D',
                                 value: 30
                             },
                             {
-                                name: 'R&D',
-                                value: 40
+                                name: 'Product Development',
+                                value: 20
+                            },
+                            {
+                                name: 'Mechanical Design',
+                                value: 20
                             },
                             {
                                 name: 'Computer Aided Design',
@@ -104,10 +108,6 @@ function createViz() {
                             },
                             {
                                 name: 'Web Development',
-                                value: 10
-                            },
-                            {
-                                name: 'Product Development',
                                 value: 10
                             },
                             {
@@ -127,55 +127,23 @@ function createViz() {
                                 value: 50
                             },
                             {
+                                name: 'Web Development',
+                                value: 15
+                            },
+                            {
                                 name: 'R&D',
+                                value: 15
+                            },
+                            {
+                                name: 'Data Analytics',
                                 value: 10
                             },
                             {
                                 name: 'Computer Aided Design',
-                                value: 10
-                            },
-                            {
-                                name: 'Web Development',
-                                value: 30
+                                value: 5
                             },
                             {
                                 name: 'Mobile Development',
-                                value: 20
-                            },
-                            {
-                                name: 'Data Analytics',
-                                value: 10
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                series: [
-                    {
-                        data: [
-                            {
-                                name: 'Product Design',
-                                value: 10
-                            },
-                            {
-                                name: 'R&D',
-                                value: 20
-                            },
-                            {
-                                name: 'Web Development',
-                                value: 10
-                            },
-                            {
-                                name: 'Mobile Development',
-                                value: 10
-                            },
-                            {
-                                name: 'Data Analytics',
-                                value: 20
-                            },
-                            {
-                                name: 'Data Visualization',
                                 value: 5
                             }
                         ]
@@ -187,28 +155,60 @@ function createViz() {
                     {
                         data: [
                             {
-                                name: 'Product Development',
-                                value: 10
+                                name: 'Product Design',
+                                value: 25
                             },
                             {
                                 name: 'Web Development',
-                                value: 15
-                            },
-                            {
-                                name: 'Mobile Development',
-                                value: 10
+                                value: 25
                             },
                             {
                                 name: 'Data Analytics',
-                                value: 30
+                                value: 20
                             },
                             {
-                                name: 'Data Visualization',
-                                value: 30
+                                name: 'Mobile Development',
+                                value: 15
+                            },
+                            {
+                                name: 'R&D',
+                                value: 10
                             },
                             {
                                 name: 'UI/UX',
+                                value: 5
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                series: [
+                    {
+                        data: [
+                            {
+                                name: 'Web Development',
                                 value: 30
+                            },
+                            {
+                                name: 'Product Development',
+                                value: 20
+                            },
+                            {
+                                name: 'Data Visualization',
+                                value: 20
+                            },
+                            {
+                                name: 'Mobile Development',
+                                value: 12
+                            },
+                            {
+                                name: 'Data Analytics',
+                                value: 10
+                            },
+                            {
+                                name: 'UI/UX',
+                                value: 8
                             }
                         ]
                     }
