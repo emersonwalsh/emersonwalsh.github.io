@@ -23,7 +23,7 @@ function createViz() {
                 axisType: 'category',
                 autoPlay: true,
                 loop: true,
-                playInterval: 2250,
+                playInterval: 3000,
                 controlPosition: 'left',
                 data: ['2013', '2014', '2015', '2016', '2017', '2018']
             },
