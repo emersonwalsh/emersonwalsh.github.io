@@ -4,14 +4,19 @@ window.addEventListener('resize', function() {
 });
 
 function createViz() {
-    var myChart = echarts.init(document.getElementById('pie'));
+    var myChart = echarts.init(document.getElementById('pie')),
+        clientWidth = myChart._dom.clientWidth,
+        showLabels = true;
 
-    // if window.width is less that x px, hide labels
+    if (clientWidth < 520) {
+        showLabels = false;
+    }
 
     var option = {
         baseOption: {
             title : {
                 text: 'Professional Interests Over Time',
+                subtext: 'Try interacting with the timeline below!',
                 left: 'center'
             },
             tooltip: {
@@ -23,7 +28,7 @@ function createViz() {
                 axisType: 'category',
                 autoPlay: true,
                 loop: true,
-                playInterval: 3000,
+                playInterval: 5000,
                 controlPosition: 'left',
                 data: ['2013', '2014', '2015', '2016', '2017', '2018']
             },
@@ -32,11 +37,13 @@ function createViz() {
                 {
                     name: 'Interests',
                     label: {
-                        show: true,
-                        position: 'outside'
+                        show: showLabels
+                    },
+                    labelLine: {
+                        show: showLabels
                     },
                     type: 'pie',
-                    radius: ['0%', '40%']
+                    radius: ['0%', '50%']
                 }
             ]
         },
