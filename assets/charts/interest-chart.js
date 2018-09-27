@@ -10,7 +10,7 @@ function createBar() {
     var option = {
         title : {
             text: 'Technical Proficiencies',
-            subtext: 'Try clicking on a bar!',
+            subtext: 'Click on a bar to learn more',
             left: 'center'
         },
         legend: {
@@ -48,7 +48,8 @@ function createBar() {
             data: ['JavaScript', 'HTML', 'CSS', 'Matlab', 'Python', 'React', 'Swift']
         },
         yAxis: {
-            type: 'value'
+            type: 'value',
+            show: false
         },
         series: [
             {

@@ -1,3 +1,7 @@
+<!-- TODO
+Add Projects sections
+Include SmartVibe, FInsight, and Gantt code pen project -->
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -6,6 +10,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico' />
+
 		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
@@ -30,10 +36,11 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li><a href="#intro" class="active">About Me</a></li>
+							<li><a href="#intro" class="active">About</a></li>
 							<li><a href="#first">Skills</a></li>
-							<li><a href="#second">Experiences</a></li>
-							<li><a href="#cta">Contact Me</a></li>
+							<li><a href="#projects">Projects</a></li>
+							<li><a href="#second">Work</a></li>
+							<li><a href="#cta">Contact</a></li>
 						</ul>
 					</nav>
 
@@ -44,9 +51,9 @@
 								<div class="spotlight">
 									<div class="content">
 										<header class="major">
-											<h2>About Me</h2>
+											<h2>About</h2>
 										</header>
-										<p>Hi! I'm Emerson, a software developer from Louisville, Kentucky. I'm currently living in Washington D.C. and working for Deloitte Consultings as a Software Developer. Last year, I graduated from Johns Hopkins University where I studied Mechanical Engineering and competed on the Men's Varsity Tennis team. I have experience in technical consulting, web & mobile development, product design, and data analytics.</p>
+										<p>Hi! I'm Emerson, a software developer from Louisville, Kentucky. I'm currently living in Washington D.C. and working for Deloitte Consultings as a Software Developer. I graduated from Johns Hopkins University in 2017 where I studied Mechanical Engineering and competed on the Men's Varsity Tennis team. I have experience in technical consulting, web & mobile development, product design, and data analytics.</p>
 									</div>
 									<span class="image"><img src="images/dc.jpg" alt="" /></span>
 								</div>
@@ -76,13 +83,48 @@
 								
 							</section>
 
+						<!-- First Section -->
+						<section id="projects" class="main special">
+							<header class="major">
+								<h2>Projects</h2>
+							</header>
+							<ul class="features">
+								<li>
+									<span class="icon major style3">
+											<img class="project-image" src="images/finsight.png" alt="finsight"/>
+									</span>
+									<h2>Finsight</h2>
+									<p>Visualize the performance of your favorite stocks in real time using the Alpha Vantage API.</p>
+									<p>
+										<a href="https://emersonwalsh.github.io/finsight/" target="_blank" class="button custom">More</a>
+									</p>
+								</li>
+								<li>
+									<span class="icon major style3">
+										<img class="project-image" src="images/smartvibe.png" alt="smartvibe"/>
+									</span>
+									<h2>SmartVibe</h2>
+									<p>Analyze your performance on the tennis court using this smart vibration dampener for the tennis racket.</p>
+									<p>
+										<a href="assets/smart_vibe.pdf" target="_blank" class="button custom">More</a>
+									</p>
+								</li>
+								<!-- TODO include gantt code pen -->
+								<!-- <li>
+									<span class="icon major style5 fa-diamond"></span>
+									<h3>Gantt</h3>
+									<p>Code pen project. Gantt chart built in d3.</p>
+								</li> -->
+							</ul>
+						</section>
+
 						<!-- Second Section -->
 
 						<section id="second" class="main">
 							<div class="spotlight">
 								<div class="content">
 									<header class="major">
-										<h2>Experiences</h2>
+										<h2>Work</h2>
 									</header>
 								</div>
 							</div>
@@ -94,7 +136,7 @@
 
 							<div class="spotlight">
 								<div class="content">
-									<p>As a <b>Business Techonology Analyst</b> at <b>Deloitte Consulting LLP</b>, I specialize as a Front-End Software Engineer on the <a href="http://semoss.org" target="_blank"><b><u>SEMOSS</u></b></a> platform, a web-based, end-to-end data analytics and visualization tool. This application allows users to effortlessly connect data from various different data sources, run analytic algorithms, transform data to cavas-based visualizations to discover insights, and then publish to share the insight with anyone.</p>
+									<p>As a <b>Business Techonology Analyst</b> at <b>Deloitte Consulting LLP</b>, I specialize as a Front-End Software Engineer on the <a href="http://semoss.org" target="_blank"><b><u>SEMOSS</u></b></a> platform, an open-source, end-to-end data analytics and visualization tool. This web application allows users to effortlessly connect data from various different data sources, run analytic algorithms, transform data to cavas-based visualizations to discover insights, and then publish to share the insight with anyone.</p>
 									<!-- <p>When hover over image, overlay greyed + sign to indicate link</p> -->
 								</div>
 								<span class="image">
@@ -102,18 +144,6 @@
 										<img src="images/deloitte.jpg" alt="deloitte"/>
 									</a>
 								</span>
-							</div>
-
-							<div class="spotlight">
-								<div class="content">
-									<p>As the <b>Creator and Lead Engineer</b> of <b>Smart Vibe</b>, I designed and developed a smart shock absorber for the tennis racket that can provide insight for the player about their performance. After recieving funding from Johns Hopkins University Engineering Department to pursue this idea, I spent a summer at the University of California, Berkeley where I embedded a rechargeable sensor (9-axis IMU). This process involved 3D Printing, computer-aided design in PTC Creo, injection molding, and data anlytics using Matlab. Click on the image to learn more about this project!  </p>
-								</div>
-								<span class="image">
-									<a href="assets/smart_vibe.pdf" target="_blank">
-										<img src="images/smartvibe.png" alt="smartvibe"/>
-									</a>
-								</span>
-
 							</div>
 
 							<div class="spotlight">
@@ -133,14 +163,13 @@
 								<header class="major">
 									<h2>Contact</h2>
 									<p>If you have any questions or would like to get in touch, please feel free to reach out!</p>
-
 									<ul class="icons">
-										<li><a href="assets/resume.pdf" target="_blank" class="button special">Download Resume</a></li>
+										<li><a href="mailto:emersonwalsh@gmail.com" target="_blank" class="icon fa-envelope alt"><span class="label">Instagram</span></a></li>
+										<li><a href="http://www.linkedin.com/in/emerson-walsh-a869727b" target="_blank" class="icon fa-linkedin alt"><span class="label">Facebook</span></a></li>
+										<li><a href="https://github.com/emersonwalsh" target="_blank" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
 									</ul>
 									<ul class="icons">
-										<li><a href="mailto:emersonwalsh@gmail.com" class="icon fa-envelope alt"><span class="label">Instagram</span></a></li>
-										<li><a href="http://www.linkedin.com/in/emerson-walsh-a869727b" class="icon fa-linkedin alt"><span class="label">Facebook</span></a></li>
-										<li><a href="https://github.com/emersonwalsh" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
+										<li><a href="assets/resume.pdf" target="_blank" class="button special">Download Resume</a></li>
 									</ul>
 								</header>									
 							</section>

@@ -3834,3 +3834,30 @@
 			}
 
 		}
+
+.button.custom {
+	width: 100px;
+	min-width: 0;
+	margin-right: 20px;
+}
+
+.project-image {
+	width: 100%;
+	height: auto;
+	border-radius: 50%;
+}
+
+.icon.major.style3 {
+	width:  72%;
+}
+@media screen and  (max-width: 980px) {
+	.icon.major.style3 {
+		width: 192px;
+	}
+}
+
+@media screen and  (max-width: 736px) {
+	.icon.major.style3 {
+		width: 137px;
+	}
+}

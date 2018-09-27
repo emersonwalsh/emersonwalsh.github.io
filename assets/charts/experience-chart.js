@@ -16,7 +16,6 @@ function createViz() {
         baseOption: {
             title : {
                 text: 'Professional Interests Over Time',
-                subtext: 'Try interacting with the timeline below!',
                 left: 'center'
             },
             tooltip: {
