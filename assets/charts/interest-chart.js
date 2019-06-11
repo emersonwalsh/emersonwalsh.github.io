@@ -45,7 +45,7 @@ function createBar() {
         },
         xAxis: {
             type: 'category',
-            data: ['JavaScript', 'HTML', 'CSS', 'Matlab', 'Python', 'React', 'Swift']
+            data: ['JavaScript', 'HTML', 'CSS', 'Matlab', 'Python', 'R']
         },
         yAxis: {
             type: 'value',
@@ -54,7 +54,7 @@ function createBar() {
         series: [
             {
                 name: 'Proficiency',
-                data: [9, 8.5, 7.6, 7.5, 6.2, 5.5, 4],
+                data: [9, 8.5, 7.6, 7.5, 6.2, 5.5],
                 type: 'bar',
                 itemStyle: {
                     color: '#6699ff'
@@ -62,7 +62,7 @@ function createBar() {
             },
             {
                 name: 'Interests',
-                data: [9.8, 6, 6.8, 7, 8, 9, 8.5],
+                data: [9.8, 7, 6.8, 5, 7.5, 8.5],
                 type: 'bar',
                 itemStyle: {
                     color: '#00cc99'
@@ -83,10 +83,8 @@ function createBar() {
             window.open('https://developer.mozilla.org/en-US/docs/Web/CSS');
         } else if (params.name === 'HTML') {
             window.open('https://developer.mozilla.org/en-US/docs/Web/HTML');
-        } else if (params.name === 'Swift') {
-            window.open('https://developer.apple.com/swift/');
-        } else if (params.name === 'React') {
-            window.open('https://reactjs.org/');
+        } else if (params.name === 'R') {
+            window.open('https://www.r-project.org/');
         } else if (params.name === 'Python') {
             window.open('https://www.python.org/');
         } else if (params.name === 'Matlab') {
