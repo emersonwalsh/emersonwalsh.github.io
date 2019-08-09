@@ -3836,17 +3836,12 @@
 		}
 
 .button.custom {
-	width: 100px;
+	width: 70%;
 	min-width: 0;
 }
 
 .button.webgl {
-	width: 110px;
-	min-width: 0;
-}
-
-.button.leaflet {
-	width: 110px;
+	width: 35%;
 	min-width: 0;
 }
 
