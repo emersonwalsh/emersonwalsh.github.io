@@ -3840,6 +3840,16 @@
 	min-width: 0;
 }
 
+.button.webgl {
+	width: 110px;
+	min-width: 0;
+}
+
+.button.leaflet {
+	width: 110px;
+	min-width: 0;
+}
+
 .project-image {
 	width: 100%;
 	height: auto;

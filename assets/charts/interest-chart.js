@@ -20,12 +20,7 @@ function createBar() {
         tooltip: {
             confine: true
         },
-        // Add heat to represent interest instead of additional series
-        // visualMap: {
-        //     show: true,
-        //     min: 0,
-        //     max: 10
-        // },
+        // TODO add heat to represent interest instead of additional series
         toolbox: {
             feature: {
                 magicType: {
@@ -54,7 +49,7 @@ function createBar() {
         series: [
             {
                 name: 'Proficiency',
-                data: [9, 8.5, 7.6, 7.5, 6.2, 5.5],
+                data: [9, 9, 7, 6, 6, 5],
                 type: 'bar',
                 itemStyle: {
                     color: '#6699ff'
@@ -62,7 +57,7 @@ function createBar() {
             },
             {
                 name: 'Interests',
-                data: [9.8, 7, 6.8, 5, 7.5, 8.5],
+                data: [10, 7, 8, 4, 7, 8],
                 type: 'bar',
                 itemStyle: {
                     color: '#00cc99'
@@ -76,7 +71,6 @@ function createBar() {
 
     myChart.on('click', function (params) {
         // printing data name in console
-        // console.log(params.name);
         if (params.name === 'JavaScript') {
             window.open('https://www.javascript.com/');
         } else if (params.name === 'CSS') {

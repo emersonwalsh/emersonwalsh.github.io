@@ -29,7 +29,7 @@ function createViz() {
                 loop: true,
                 playInterval: 5000,
                 controlPosition: 'left',
-                data: ['2013', '2014', '2015', '2016', '2017', '2018']
+                data: ['2013', '2014', '2015', '2016', '2017', '2018', '2019']
             },
             color : ['#6699ff', '#00cc99', '#f9ae58', '#ff6666', '#666699','#ace600', '#336699'],
             series: [
@@ -109,15 +109,11 @@ function createViz() {
                                 value: 20
                             },
                             {
-                                name: 'Computer Aided Design',
-                                value: 10
+                                name: 'Data Analytics',
+                                value: 20
                             },
                             {
                                 name: 'Web Development',
-                                value: 10
-                            },
-                            {
-                                name: 'Data Analytics',
                                 value: 10
                             }
                         ]
@@ -134,19 +130,15 @@ function createViz() {
                             },
                             {
                                 name: 'Web Development',
+                                value: 20
+                            },
+                            {
+                                name: 'Data Analytics',
                                 value: 15
                             },
                             {
                                 name: 'R&D',
-                                value: 15
-                            },
-                            {
-                                name: 'Data Analytics',
                                 value: 10
-                            },
-                            {
-                                name: 'Computer Aided Design',
-                                value: 5
                             },
                             {
                                 name: 'Mobile Development',
@@ -177,12 +169,8 @@ function createViz() {
                                 value: 15
                             },
                             {
-                                name: 'R&D',
-                                value: 10
-                            },
-                            {
                                 name: 'UI/UX',
-                                value: 5
+                                value: 15
                             }
                         ]
                     }
@@ -215,6 +203,34 @@ function createViz() {
                             {
                                 name: 'UI/UX',
                                 value: 8
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                series: [
+                    {
+                        data: [
+                            {
+                                name: 'Web Development',
+                                value: 40
+                            },
+                            {
+                                name: 'UI/UX',
+                                value: 20
+                            },
+                            {
+                                name: 'Data Visualization',
+                                value: 20
+                            },
+                            {
+                                name: 'Product Development',
+                                value: 10
+                            },
+                            {
+                                name: 'Mobile Development',
+                                value: 10
                             }
                         ]
                     }
