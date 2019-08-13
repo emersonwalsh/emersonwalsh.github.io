@@ -11,16 +11,26 @@ function createBar() {
         title : {
             text: 'Technical Proficiencies',
             subtext: 'Click on a bar to learn more',
-            left: 'center'
+            left: '10%'
+        },
+        grid: {
+            top: 80,
+            bottom: 100
         },
         legend: {
             left: 'center',
             top: 'bottom'
         },
         tooltip: {
-            confine: true
+            confine: true,
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow',
+                shadowStyle: {
+                    opacity: 0.75
+                }
+            }
         },
-        // TODO add heat to represent interest instead of additional series
         toolbox: {
             feature: {
                 magicType: {
@@ -40,7 +50,62 @@ function createBar() {
         },
         xAxis: {
             type: 'category',
-            data: ['JavaScript', 'HTML', 'CSS', 'Matlab', 'Python', 'R']
+            data: ['JavaScript', 'HTML', 'CSS', 'Matlab', 'Python', 'R'],
+            axisLabel: {
+                formatter: function (value) {
+                    return '{' + value + '| }';
+                    // return '{' + value + '| }\n{value|' + value + '}';
+                },
+                margin: 15,
+                rich: {
+                    // value: {
+                    //     lineHeight: 20,
+                    //     align: 'center'
+                    // },
+                    JavaScript: {
+                        height: 40,
+                        align: 'center',
+                        backgroundColor: {
+                            image: './images/skills/js.png'
+                        }
+                    },
+                    HTML: {
+                        height: 40,
+                        align: 'center',
+                        backgroundColor: {
+                            image: './images/skills/html.png'
+                        }
+                    },
+                    CSS: {
+                        height: 40,
+                        align: 'center',
+                        backgroundColor: {
+                            image: './images/skills/css.png'
+                        }
+                    },
+                    Matlab: {
+                        height: 40,
+                        align: 'center',
+                        backgroundColor: {
+                            image: './images/skills/matlab.png'
+                        }
+                    },
+                    Python: {
+                        height: 40,
+                        align: 'center',
+                        backgroundColor: {
+                            image: './images/skills/python.png'
+                        }
+                    },
+                    R: {
+                        height: 40,
+                        align: 'center',
+                        backgroundColor: {
+                            image: './images/skills/r.png'
+                        }
+                    }
+                }
+            }
         },
         yAxis: {
             type: 'value',

@@ -15,8 +15,9 @@ function createViz() {
     var option = {
         baseOption: {
             title : {
-                text: 'Professional Interests Over Time',
-                left: 'center'
+                text: 'Interests Over Time',
+                subtext: 'Interact with the timeline',
+                left: '10%'
             },
             tooltip: {
                 confine: true
@@ -28,8 +29,40 @@ function createViz() {
                 autoPlay: true,
                 loop: true,
                 playInterval: 5000,
+                left: '10%',
+                right: '10%',
                 controlPosition: 'left',
-                data: ['2013', '2014', '2015', '2016', '2017', '2018', '2019']
+                data: [{
+                    value: '2014', 
+                    tooltip: {
+                        show: false
+                    }
+                },{
+                    value: '2015', 
+                    tooltip: {
+                        show: false
+                    }
+                },{
+                    value: '2016', 
+                    tooltip: {
+                        show: false
+                    }
+                },{
+                    value: '2017', 
+                    tooltip: {
+                        show: false
+                    }
+                },{
+                    value: '2018', 
+                    tooltip: {
+                        show: false
+                    }
+                },{
+                    value: '2019', 
+                    tooltip: {
+                        show: false
+                    }
+                }]
             },
             color : ['#6699ff', '#00cc99', '#f9ae58', '#ff6666', '#666699','#ace600', '#336699'],
             series: [
@@ -47,26 +80,6 @@ function createViz() {
             ]
         },
         options: [
-            {
-                series: [
-                    {
-                        data: [
-                            {
-                                name: 'R&D',
-                                value: 40
-                            },
-                            {
-                                name: 'Mechanical Design',
-                                value: 30
-                            },
-                            {
-                                name: 'Data Analytics',
-                                value: 30
-                            }
-                        ]
-                    }
-                ]
-            },
             {
                 series: [
                     {
