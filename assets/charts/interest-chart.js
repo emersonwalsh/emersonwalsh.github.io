@@ -5,21 +5,92 @@ window.addEventListener('resize', function() {
 });
 
 function createBar() {
-    var myChart = echarts.init(document.getElementById('bar'));
+    var myChart = echarts.init(document.getElementById('bar')),
+        visualMap,
+        toolbox,
+        clientWidth = myChart._dom.clientWidth;
+
+    if (clientWidth < 620) {
+        visualMap = {
+            orient: 'horizontal',
+            left: 'center',
+            top: 'bottom',
+            min: 0,
+            max: 10,
+            text: ['High Interest', 'Low Interest'],
+            dimension: 1,
+            calculable: false,
+            inRange: {
+                color: ['#6699ff', '#ff6666']
+            }
+        };
+        toolbox = {
+            feature: {
+                magicType: {
+                    type: ['bar', 'line'],
+                    title: {
+                        bar: 'Bar',
+                        line: 'Line'
+                    }
+                }
+            },
+            itemGap: 22,
+            orient: 'vertical',
+            left: 'right',
+            top: 'center'
+        };
+    } else {
+        visualMap = {
+            orient: 'vertical',
+            left: 'right',
+            top: 'center',
+            min: 0,
+            max: 10,
+            text: ['High Interest', 'Low Interest'],
+            dimension: 1,
+            calculable: false,
+            inRange: {
+                color: ['#6699ff', '#ff6666']
+            }
+        };
+        toolbox = {
+            feature: {
+                magicType: {
+                    type: ['bar', 'line'],
+                    title: {
+                        bar: 'Bar',
+                        line: 'Line'
+                    }
+                }
+            },
+            itemGap: 22,
+            orient: 'horizontal',
+            left: 'center',
+            top: 'bottom'
+        };
+    }
 
     var option = {
+        dataset: {
+            source: [
+                ['proficiency', 'interest', 'language', 'detail'],
+                [9, 10, 'JavaScript', 'Angular, Vue, React'],
+                [9, 7, 'HTML', false],
+                [8.5, 9, 'CSS', 'SASS, LESS'],
+                [5.5, 1, 'Matlab', false],
+                [5, 7, 'Python', false],
+                [4, 8, 'R', false],
+                [3, 3, 'Java', false]
+            ]
+        },
         title : {
-            text: 'Technical Proficiencies',
-            subtext: 'Click on a bar to learn more',
+            text: 'My Technical Proficiencies',
+            subtext: 'Scale: 1 (Novice) - 10 (Expert). Tip: Click on a bar to learn more.',
             left: '10%'
         },
         grid: {
             top: 80,
             bottom: 100
-        },
-        legend: {
-            left: 'center',
-            top: 'bottom'
         },
         tooltip: {
             confine: true,
@@ -29,28 +100,33 @@ function createBar() {
                 shadowStyle: {
                     opacity: 0.75
                 }
-            }
-        },
-        toolbox: {
-            feature: {
-                magicType: {
-                    type: ['line', 'bar', 'stack', 'tiled'],
-                    title: {
-                        line: 'Line',
-                        bar: 'Bar',
-                        stack: 'Stack',
-                        tiled: 'Tiled'
+            },
+            extraCssText: 'text-align: left;',
+            formatter: function(param) {
+                var html = '';
+
+                html += param[0].marker + param[0].axisValue;
+                html += '<br>';
+                html += 'Proficiency: ' + param[0].data[0] + '<br>';
+
+                if (param[0].data[3]) {
+                    if (param[0].axisValue === 'JavaScript') {
+                        html += 'Frameworks: ' + param[0].data[3];
+                    } else if (param[0].axisValue === 'CSS') {
+                        html += 'Pre-Processors: ' + param[0].data[3];
+                    } else {
+                        html += 'Detail: ' + param[0].data[3];
                     }
                 }
-            },
-            itemGap: 22,
-            orient: 'vertical',
-            left: 'right',
-            top: 'center'
+
+                return html;
+            }
         },
+        visualMap: visualMap,
+        toolbox: toolbox,
         xAxis: {
             type: 'category',
-            data: ['JavaScript', 'HTML', 'CSS', 'Matlab', 'Python', 'R'],
+            data: ['JavaScript', 'HTML', 'CSS', 'Matlab', 'Python', 'R', 'Java'],
             axisLabel: {
                 formatter: function (value) {
                     return '{' + value + '| }';
@@ -103,32 +179,39 @@ function createBar() {
                         backgroundColor: {
                             image: './images/skills/r.png'
                         }
+                    },
+                    Java: {
+                        height: 40,
+                        align: 'center',
+                        backgroundColor: {
+                            image: './images/skills/java.png'
+                        }
                     }
+
                 }
             }
         },
         yAxis: {
             type: 'value',
-            show: false
-        },
-        series: [
-            {
-                name: 'Proficiency',
-                data: [9, 9, 7, 6, 6, 5],
-                type: 'bar',
-                itemStyle: {
-                    color: '#6699ff'
-                }
-            },
-            {
-                name: 'Interests',
-                data: [10, 7, 8, 4, 7, 8],
-                type: 'bar',
-                itemStyle: {
-                    color: '#00cc99'
-                }
+            show: true,
+            splitLine: {
+                show: false,
+                interval: 2
             }
-        ]
+        },
+        series:{
+            name: 'Proficiency',
+            type: 'bar',
+            barWidth: '60%',
+            encode: {
+                x: 'language',
+                y: 'proficiency'
+            },
+            itemStyle: {
+                color: '#000000',
+                barBorderRadius: 3
+            }
+        }
     };
 
     myChart.setOption(option);
@@ -148,6 +231,8 @@ function createBar() {
             window.open('https://www.python.org/');
         } else if (params.name === 'Matlab') {
             window.open('https://www.mathworks.com/products/matlab.html');
+        } else if (params.name === 'Java') {
+            window.open('https://www.java.com/en/')
         }
 
     });

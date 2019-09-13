@@ -5,30 +5,42 @@ window.addEventListener('resize', function() {
 
 function createViz() {
     var myChart = echarts.init(document.getElementById('pie')),
-        clientWidth = myChart._dom.clientWidth,
-        showLabels = true;
+        colorMapping,
+        option;
 
-    if (clientWidth < 520) {
-        showLabels = false;
+    colorMapping = {
+        'Web Development': '#6699ff',
+        'Mobile Development': '#00cc99',
+        'Data Visualization': '#f9ae58',
+        'Data Analytics': '#ff6666',
+        'Product Design': '#7777e0',
+        'Computer Vision': '#c0e063',
+        'Computer-Aided Design': '#336699'
     }
 
-    var option = {
+    option = {
         baseOption: {
             title : {
-                text: 'Interests Over Time',
-                subtext: 'Interact with the timeline',
+                text: 'How I Spend My Time',
+                subtext: 'Each topic is sized relative to my level of interest. Tip: Interact with the timeline.',
                 left: '10%'
             },
             tooltip: {
-                confine: true
+                show: true,
+                formatter: function (param) {
+                    var html = '';
+                    html += param.marker + param.name;
+                    return html;
+                }
             },
             timeline: {
                 show: true,
                 type: 'slider',
                 axisType: 'category',
-                autoPlay: true,
+                currentIndex: 5,
+                autoPlay: false,
                 loop: true,
-                playInterval: 5000,
+                playInterval: 2500,
                 left: '10%',
                 right: '10%',
                 controlPosition: 'left',
@@ -64,18 +76,20 @@ function createViz() {
                     }
                 }]
             },
-            color : ['#6699ff', '#00cc99', '#f9ae58', '#ff6666', '#666699','#ace600', '#336699'],
+            animation: true,
+            animationDuration: 3000,
             series: [
                 {
                     name: 'Interests',
-                    label: {
-                        show: showLabels
-                    },
-                    labelLine: {
-                        show: showLabels
-                    },
-                    type: 'pie',
-                    radius: ['0%', '50%']
+                    type: 'treemap',
+                    roam: false,
+                    loop: true,
+                    nodeClick: false,
+                    height: '50%',
+                    width: '50%',
+                    breadcrumb: {
+                        show: false
+                    }
                 }
             ]
         },
@@ -83,169 +97,294 @@ function createViz() {
             {
                 series: [
                     {
-                        data: [
-                            {
-                                name: 'Mechanical Design',
-                                value: 40
-                            },
-                            {
-                                name: 'R&D',
-                                value: 20
-                            },
-                            {
-                                name: 'Data Analytics',
-                                value: 20
-                            },
-                            {
-                                name: 'Computer Aided Design',
-                                value: 20
+                        data: [{
+                            name: 'Web Development',
+                            value: 0,
+                            itemStyle: {
+                                color: colorMapping['Web Development'],
                             }
-
-                        ]
+                        }, {
+                            name: 'Mobile Development',
+                            value: 0,
+                            itemStyle: {
+                                color: colorMapping['Mobile Development']
+                            }
+                        }, {
+                            name: 'Data Visualization',
+                            value: 5,
+                            itemStyle: {
+                                color: colorMapping['Data Visualization']
+                            }
+                        }, {
+                            name: 'Data Analytics',
+                            value: 20,
+                            itemStyle: {
+                                color: colorMapping['Data Analytics']
+                            }
+                        }, {
+                            name: 'Product Design',
+                            value: 10,
+                            itemStyle: {
+                                color: colorMapping['Product Design']
+                            }
+                        }, {
+                            name: 'Computer Vision',
+                            value: 20,
+                            itemStyle: {
+                                color: colorMapping['Computer Vision']
+                            }
+                        }, {
+                            name: 'Computer-Aided Design',
+                            value: 45,
+                            itemStyle: {
+                                color: colorMapping['Computer-Aided Design']
+                            }
+                        }]
                     }
                 ]
             },
             {
                 series: [
                     {
-                        data: [
-                            {
-                                name: 'R&D',
-                                value: 30
-                            },
-                            {
-                                name: 'Product Development',
-                                value: 20
-                            },
-                            {
-                                name: 'Mechanical Design',
-                                value: 20
-                            },
-                            {
-                                name: 'Data Analytics',
-                                value: 20
-                            },
-                            {
-                                name: 'Web Development',
-                                value: 10
+                        data: [{
+                            name: 'Web Development',
+                            value: 0,
+                            itemStyle: {
+                                color: colorMapping['Web Development'],
                             }
-                        ]
+                        }, {
+                            name: 'Mobile Development',
+                            value: 5,
+                            itemStyle: {
+                                color: colorMapping['Mobile Development']
+                            }
+                        }, {
+                            name: 'Data Visualization',
+                            value: 5,
+                            itemStyle: {
+                                color: colorMapping['Data Visualization']
+                            }
+                        }, {
+                            name: 'Data Analytics',
+                            value: 30,
+                            itemStyle: {
+                                color: colorMapping['Data Analytics']
+                            }
+                        }, {
+                            name: 'Product Design',
+                            value: 20,
+                            itemStyle: {
+                                color: colorMapping['Product Design']
+                            }
+                        }, {
+                            name: 'Computer Vision',
+                            value: 20,
+                            itemStyle: {
+                                color: colorMapping['Computer Vision']
+                            }
+                        }, {
+                            name: 'Computer-Aided Design',
+                            value: 20,
+                            itemStyle: {
+                                color: colorMapping['Computer-Aided Design']
+                            }
+                        }]
                     }
                 ]
             },
             {
                 series: [
                     {
-                        data: [
-                            {
-                                name: 'Product Design',
-                                value: 50
-                            },
-                            {
-                                name: 'Web Development',
-                                value: 20
-                            },
-                            {
-                                name: 'Data Analytics',
-                                value: 15
-                            },
-                            {
-                                name: 'R&D',
-                                value: 10
-                            },
-                            {
-                                name: 'Mobile Development',
-                                value: 5
+                        data: [{
+                            name: 'Web Development',
+                            value: 5,
+                            itemStyle: {
+                                color: colorMapping['Web Development'],
                             }
-                        ]
+                        }, {
+                            name: 'Mobile Development',
+                            value: 15,
+                            itemStyle: {
+                                color: colorMapping['Mobile Development']
+                            }
+                        }, {
+                            name: 'Data Visualization',
+                            value: 5,
+                            itemStyle: {
+                                color: colorMapping['Data Visualization']
+                            }
+                        }, {
+                            name: 'Data Analytics',
+                            value: 25,
+                            itemStyle: {
+                                color: colorMapping['Data Analytics']
+                            }
+                        }, {
+                            name: 'Product Design',
+                            value: 25,
+                            itemStyle: {
+                                color: colorMapping['Product Design']
+                            }
+                        }, {
+                            name: 'Computer Vision',
+                            value: 10,
+                            itemStyle: {
+                                color: colorMapping['Computer Vision']
+                            }
+                        }, {
+                            name: 'Computer-Aided Design',
+                            value: 15,
+                            itemStyle: {
+                                color: colorMapping['Computer-Aided Design']
+                            }
+                        }]
                     }
                 ]
             },
             {
                 series: [
                     {
-                        data: [
-                            {
-                                name: 'Product Design',
-                                value: 25
-                            },
-                            {
-                                name: 'Web Development',
-                                value: 25
-                            },
-                            {
-                                name: 'Data Analytics',
-                                value: 20
-                            },
-                            {
-                                name: 'Mobile Development',
-                                value: 15
-                            },
-                            {
-                                name: 'UI/UX',
-                                value: 15
+                        data: [{
+                            name: 'Web Development',
+                            value: 15,
+                            itemStyle: {
+                                color: colorMapping['Web Development'],
                             }
-                        ]
+                        }, {
+                            name: 'Mobile Development',
+                            value: 20,
+                            itemStyle: {
+                                color: colorMapping['Mobile Development']
+                            }
+                        }, {
+                            name: 'Data Visualization',
+                            value: 10,
+                            itemStyle: {
+                                color: colorMapping['Data Visualization']
+                            }
+                        }, {
+                            name: 'Data Analytics',
+                            value: 20,
+                            itemStyle: {
+                                color: colorMapping['Data Analytics']
+                            }
+                        }, {
+                            name: 'Product Design',
+                            value: 25,
+                            itemStyle: {
+                                color: colorMapping['Product Design']
+                            }
+                        }, {
+                            name: 'Computer Vision',
+                            value: 5,
+                            itemStyle: {
+                                color: colorMapping['Computer Vision']
+                            }
+                        }, {
+                            name: 'Computer-Aided Design',
+                            value: 5,
+                            itemStyle: {
+                                color: colorMapping['Computer-Aided Design']
+                            }
+                        }]
                     }
                 ]
             },
             {
                 series: [
                     {
-                        data: [
-                            {
-                                name: 'Web Development',
-                                value: 30
-                            },
-                            {
-                                name: 'Product Development',
-                                value: 20
-                            },
-                            {
-                                name: 'Data Visualization',
-                                value: 20
-                            },
-                            {
-                                name: 'Mobile Development',
-                                value: 12
-                            },
-                            {
-                                name: 'Data Analytics',
-                                value: 10
-                            },
-                            {
-                                name: 'UI/UX',
-                                value: 8
+                        data: [{
+                            name: 'Web Development',
+                            value: 30,
+                            itemStyle: {
+                                color: colorMapping['Web Development'],
                             }
-                        ]
+                        }, {
+                            name: 'Mobile Development',
+                            value: 20,
+                            itemStyle: {
+                                color: colorMapping['Mobile Development']
+                            }
+                        }, {
+                            name: 'Data Visualization',
+                            value: 15,
+                            itemStyle: {
+                                color: colorMapping['Data Visualization']
+                            }
+                        }, {
+                            name: 'Data Analytics',
+                            value: 10,
+                            itemStyle: {
+                                color: colorMapping['Data Analytics']
+                            }
+                        }, {
+                            name: 'Product Design',
+                            value: 15,
+                            itemStyle: {
+                                color: colorMapping['Product Design']
+                            }
+                        }, {
+                            name: 'Computer Vision',
+                            value: 5,
+                            itemStyle: {
+                                color: colorMapping['Computer Vision']
+                            }
+                        }, {
+                            name: 'Computer-Aided Design',
+                            value: 0,
+                            itemStyle: {
+                                color: colorMapping['Computer-Aided Design']
+                            }
+                        }]
                     }
                 ]
             },
             {
                 series: [
                     {
-                        data: [
-                            {
-                                name: 'Web Development',
-                                value: 40
-                            },
-                            {
-                                name: 'UI/UX',
-                                value: 20
-                            },
-                            {
-                                name: 'Data Visualization',
-                                value: 20
-                            },
-                            {
-                                name: 'Product Development',
-                                value: 10
-                            },
-                            {
-                                name: 'Mobile Development',
-                                value: 10
+                        data: [{
+                            name: 'Web Development',
+                            value: 50,
+                            itemStyle: {
+                                color: colorMapping['Web Development'],
                             }
-                        ]
+                        }, {
+                            name: 'Mobile Development',
+                            value: 16,
+                            itemStyle: {
+                                color: colorMapping['Mobile Development']
+                            }
+                        }, {
+                            name: 'Data Visualization',
+                            value: 17,
+                            itemStyle: {
+                                color: colorMapping['Data Visualization']
+                            }
+                        }, {
+                            name: 'Data Analytics',
+                            value: 5,
+                            itemStyle: {
+                                color: colorMapping['Data Analytics']
+                            }
+                        }, {
+                            name: 'Product Design',
+                            value: 10,
+                            itemStyle: {
+                                color: colorMapping['Product Design']
+                            }
+                        }, {
+                            name: 'Computer Vision',
+                            value: 2,
+                            itemStyle: {
+                                color: colorMapping['Computer Vision']
+                            }
+                        }, {
+                            name: 'Computer-Aided Design',
+                            value: 0,
+                            itemStyle: {
+                                color: colorMapping['Computer-Aided Design']
+                            }
+                        }]
                     }
                 ]
             }
