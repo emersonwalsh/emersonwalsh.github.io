@@ -22,7 +22,7 @@ function createViz() {
         baseOption: {
             title : {
                 text: 'How I Spend My Time',
-                subtext: 'Each topic is sized relative to my level of interest. Tip: Interact with the timeline.',
+                subtext: 'Topics are sized relative to my level of interest. Tip: Interact with the timeline.',
                 left: '10%'
             },
             tooltip: {
