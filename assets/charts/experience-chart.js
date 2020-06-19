@@ -37,10 +37,10 @@ function createViz() {
                 show: true,
                 type: 'slider',
                 axisType: 'category',
-                currentIndex: 5,
+                currentIndex: 6,
                 autoPlay: false,
                 loop: true,
-                playInterval: 2500,
+                playInterval: 1500,
                 left: '10%',
                 right: '10%',
                 controlPosition: 'left',
@@ -71,6 +71,11 @@ function createViz() {
                     }
                 },{
                     value: '2019', 
+                    tooltip: {
+                        show: false
+                    }
+                },{
+                    value: '2020', 
                     tooltip: {
                         show: false
                     }
@@ -375,6 +380,55 @@ function createViz() {
                         }, {
                             name: 'Computer Vision',
                             value: 2,
+                            itemStyle: {
+                                color: colorMapping['Computer Vision']
+                            }
+                        }, {
+                            name: 'Computer-Aided Design',
+                            value: 0,
+                            itemStyle: {
+                                color: colorMapping['Computer-Aided Design']
+                            }
+                        }]
+                    }
+                ]
+            },
+            {
+                series: [
+                    {
+                        data: [{
+                            name: 'Web Development',
+                            value: 65,
+                            itemStyle: {
+                                color: colorMapping['Web Development'],
+                            }
+                        }, {
+                            name: 'Mobile Development',
+                            value: 5,
+                            itemStyle: {
+                                color: colorMapping['Mobile Development']
+                            }
+                        }, {
+                            name: 'Data Visualization',
+                            value: 15,
+                            itemStyle: {
+                                color: colorMapping['Data Visualization']
+                            }
+                        }, {
+                            name: 'Data Analytics',
+                            value: 5,
+                            itemStyle: {
+                                color: colorMapping['Data Analytics']
+                            }
+                        }, {
+                            name: 'Product Design',
+                            value: 10,
+                            itemStyle: {
+                                color: colorMapping['Product Design']
+                            }
+                        }, {
+                            name: 'Computer Vision',
+                            value: 0,
                             itemStyle: {
                                 color: colorMapping['Computer Vision']
                             }

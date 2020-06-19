@@ -74,7 +74,7 @@ function createBar() {
         dataset: {
             source: [
                 ['proficiency', 'interest', 'language', 'detail'],
-                [9, 10, 'JavaScript', 'Angular, Vue, React'],
+                [9, 10, 'JavaScript', 'Angular, React, Vue, LWC'],
                 [9, 7, 'HTML', false],
                 [8.5, 9, 'CSS', 'SASS, LESS'],
                 [5.5, 1, 'Matlab', false],

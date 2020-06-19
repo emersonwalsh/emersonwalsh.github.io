@@ -3860,10 +3860,26 @@
 .icon.major.style3 {
 	width:  72%;
 }
+
+.deloitte-projects {
+	text-align: left;
+	padding-left: 5%;
+}
+
 @media screen and  (max-width: 980px) {
 	.icon.major.style3 {
 		width: 192px;
 	}
+	.deloitte-projects {
+		text-align: center;
+		padding-left: 0;
+	}
+	.deloitte-projects > ul {
+		display: inline-block;
+		list-style: none;
+		padding-left: 0;
+	}
+
 }
 
 @media screen and  (max-width: 736px) {
