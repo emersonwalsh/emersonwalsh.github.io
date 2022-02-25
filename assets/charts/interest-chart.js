@@ -74,7 +74,7 @@ function createBar() {
         dataset: {
             source: [
                 ['proficiency', 'interest', 'language', 'detail'],
-                [9, 10, 'JavaScript', 'Angular, React, Vue, LWC'],
+                [9, 10, 'JavaScript', 'React, Angular, Vue, LWC'],
                 [9, 7, 'HTML', false],
                 [8.5, 9, 'CSS', 'SASS, LESS'],
                 [5.5, 1, 'Matlab', false],
@@ -111,7 +111,7 @@ function createBar() {
 
                 if (param[0].data[3]) {
                     if (param[0].axisValue === 'JavaScript') {
-                        html += 'Frameworks: ' + param[0].data[3];
+                        html += 'FE Frameworks: ' + param[0].data[3];
                     } else if (param[0].axisValue === 'CSS') {
                         html += 'Pre-Processors: ' + param[0].data[3];
                     } else {
